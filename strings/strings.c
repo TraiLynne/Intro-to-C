@@ -24,10 +24,20 @@ int string_length(char *s)
     enough space for the reversed string. Don't forget to terminate 
     the reversed string with a null character. Return the rv array.
 */
-// char *reverse_string(char *rv, char *s)
-// {
+char *reverse_string(char *rv, char *s)
+{
+    int l = string_length(s) - 1;
+    int i;
 
-// }
+    for(i = 0 ; i < string_length(s) ; i++) {
+        *(rv + i) = *(s + l);
+        l--;
+    }
+
+    rv[i] = '\0';
+    
+    return rv;
+}
 
 #ifndef TESTING
 int main(void)
@@ -38,7 +48,7 @@ int main(void)
     char rv[512];
 
     printf("The string 'Don't forget to be awesome' has %d characters.\n", string_length(quote1));
-    // printf("The string 'a man a plan a canal panama' reversed is: '%s'\n", reverse_string(rv, quote2));
+    printf("The string 'a man a plan a canal panama' reversed is: '%s'\n", reverse_string(rv, quote2));
 
     return 0;
 }
