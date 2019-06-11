@@ -8,8 +8,14 @@
     Do not just use the `strlen` function from the standard libary.
 */
 int string_length(char *s)
-{
+{   
+    int i = 0;
 
+    while (*(s + i) != '\0'){
+        i++;
+    }
+
+    return i;
 }
 
 /*
@@ -18,10 +24,10 @@ int string_length(char *s)
     enough space for the reversed string. Don't forget to terminate 
     the reversed string with a null character. Return the rv array.
 */
-char *reverse_string(char *rv, char *s)
-{
+// char *reverse_string(char *rv, char *s)
+// {
 
-}
+// }
 
 #ifndef TESTING
 int main(void)
@@ -32,7 +38,7 @@ int main(void)
     char rv[512];
 
     printf("The string 'Don't forget to be awesome' has %d characters.\n", string_length(quote1));
-    printf("The string 'a man a plan a canal panama' reversed is: '%s'\n", reverse_string(rv, quote2));
+    // printf("The string 'a man a plan a canal panama' reversed is: '%s'\n", reverse_string(rv, quote2));
 
     return 0;
 }
